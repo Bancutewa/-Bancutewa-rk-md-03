@@ -9,7 +9,6 @@ const renderRandomQuestion = async () => {
     const index = Math.floor(Math.random() * (questions.length - 1 - 0) + 0);
     const randomQuestion = questions[index];
     document.getElementById("question-name").innerHTML = randomQuestion.content;
-
     document.getElementById("like").addEventListener("click", () => handleLike(randomQuestion.id));
     document.getElementById("dislike").addEventListener("click", () => handleDislike(randomQuestion.id));
 };
@@ -33,7 +32,7 @@ const handleLike = async (id) => {
 
 const handleDislike = async (id) => {
     // Fetch API
-    const response = await fetch(`/api/v1/questions/${id}`, {
+    const request = await fetch(`/api/v1/questions/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -42,6 +41,5 @@ const handleDislike = async (id) => {
             action: "dislike",
         }),
     });
-    console.log(response);
     window.location.href = `/question-detail/${id}`;
 };

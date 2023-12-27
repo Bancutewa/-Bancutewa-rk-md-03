@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     // Lấy id từ window.location.href
     const questionID = window.location.href.split("/").pop()
     fetchData(questionID);
@@ -14,10 +14,9 @@ const fetchData = async (id) => {
 
 const renderQuestionDetails = (question) => {
     document.querySelector(".question-content").innerHTML = question.content;
-    const total = question.like + question.dislike
-    document.querySelector(".vote-number").innerHTML = total
 
     const totalVotes = question.like + question.dislike;
+    document.querySelector(".vote-number").innerHTML = totalVotes
     const likePercentage = totalVotes === 0 ? 0 : Math.round((question.like / totalVotes) * 100);
     const dislikePercentage = totalVotes === 0 ? 0 : Math.round((question.dislike / totalVotes) * 100);
 

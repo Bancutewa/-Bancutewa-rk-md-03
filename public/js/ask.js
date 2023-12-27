@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const questionContentTextarea = document.querySelector('textarea.question-content');
     const letterCountSpan = document.querySelector('span.letter');
     const mainForm = document.querySelector('form.main-form');
 
-    questionContentTextarea.addEventListener('input', function () {
-        const content = questionContentTextarea.value
+    questionContentTextarea.addEventListener('input', () => {
+        const content = questionContentTextarea.value.trim();
         console.log(content);
         if (content.length < 200) {
             letterCountSpan.innerHTML = 200 - (content.length)
@@ -14,9 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     );
 
-    mainForm.addEventListener('submit', function (event) {
+    mainForm.addEventListener('submit', (event) => {
         event.preventDefault();
-
         const questionContent = questionContentTextarea.value.trim();
 
         if (questionContent === '') {
@@ -41,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function postData(url, data) {
+const postData = (url, data) => {
     return fetch(url, {
         method: 'POST',
         headers: {
@@ -52,7 +51,7 @@ function postData(url, data) {
 }
 
 
-function generateRandomArray(length, min, max) {
+const generateRandomArray = (length, min, max) => {
     var randomArray = [];
     for (var i = 0; i < length; i++) {
         randomArray.push(Math.floor(Math.random() * (max - min + 1)) + min);
