@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    background-color: black;
+}
+
+.header li a {
+    font-size: 20px;
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.question-content {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn {
+    min-width: 200px;
+    border-radius: 10px;
+}

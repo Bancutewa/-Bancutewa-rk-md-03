@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    background-color: black;
+}
+
+.header li a {
+    font-size: 20px;
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

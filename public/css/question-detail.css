@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    background-color: black;
+}
+
+.header li a {
+    font-size: 20px;
+    color: white;
+}
+
+.main-content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 80%;
+
+}
+
+.question-content {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.rate-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+}
+
+.rate-bar .like {
+    text-align: center;
+    background-color: rgb(0, 38, 255);
+}
+
+.rate-bar .dislike {
+    text-align: center;
+    background-color: red;
+}
